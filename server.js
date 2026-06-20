@@ -9,7 +9,10 @@ const app = express();
 const server = http.createServer(app);
 const io = socketio(server, {
   cors: {
-    origin: "https://chatcord-ashy-rho.vercel.app",
+    origin: [
+      "http://localhost:5173",
+      "https://chatcord-ashy-rho.vercel.app"
+    ],
     methods: ["GET", "POST"]
   }
 });
