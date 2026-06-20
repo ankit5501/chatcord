@@ -5,14 +5,12 @@ import { io } from 'socket.io-client'
  * Custom hook that manages a Socket.IO connection lifecycle.
  * Connects on mount, disconnects on unmount.
  */
-export function useSocket(serverUrl = '/') {
-  const socketRef = useRef(null)
-  const [connected, setConnected] = useState(false)
-
-  useEffect(() => {
-    const socket = io(serverUrl, {
-      transports: ['websocket', 'polling'],
-    })
+export function useSocket(
+  serverUrl = 'https://chatcord-gqd7.onrender.com'
+) {
+  const socket = io(serverUrl, {
+    transports: ['websocket', 'polling'],
+  })
 
     socketRef.current = socket
 
