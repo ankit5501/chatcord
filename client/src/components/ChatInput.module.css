@@ -1,0 +1,106 @@
+.container {
+  padding: 14px 20px;
+  border-top: 1px solid var(--border);
+  flex-shrink: 0;
+}
+
+.form {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  padding: 6px 6px 6px 14px;
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+
+.form:focus-within {
+  border-color: var(--accent-primary);
+  box-shadow: 0 0 0 3px var(--accent-glow);
+}
+
+/* Emoji */
+.emojiWrap {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.emojiBtn {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  background: transparent;
+  border-radius: 50%;
+  transition: transform var(--transition), background var(--transition);
+}
+
+.emojiBtn:hover {
+  transform: scale(1.2) rotate(-5deg);
+  background: var(--bg-hover);
+}
+
+.pickerPopup {
+  position: absolute;
+  bottom: 50px;
+  left: 0;
+  z-index: 100;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--border);
+  animation: fade-in-up 0.18s ease both;
+}
+
+/* Input */
+.input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  color: var(--text-primary);
+  font-size: 0.92rem;
+  height: 36px;
+  min-width: 0;
+}
+
+.input::placeholder { color: var(--text-muted); }
+.input:disabled { opacity: 0.5; cursor: not-allowed; }
+
+/* Char count */
+.charCount {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  flex-shrink: 0;
+}
+
+.charCountWarn { color: var(--offline-red); }
+
+/* Send button */
+.sendBtn {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--bg-hover);
+  color: var(--text-muted);
+  flex-shrink: 0;
+  transition: all var(--transition);
+}
+
+.sendBtn svg { width: 16px; height: 16px; }
+
+.sendBtnActive {
+  background: linear-gradient(135deg, var(--accent-primary), #8b7fff);
+  color: #fff;
+  box-shadow: 0 2px 12px var(--accent-glow);
+}
+
+.sendBtnActive:hover {
+  transform: scale(1.08);
+  filter: brightness(1.1);
+}
